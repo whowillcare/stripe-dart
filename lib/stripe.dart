@@ -74,7 +74,6 @@ class Stripe {
     return Stripe.withClient(client);
   }
 
-  @visibleForTesting
   Stripe.withClient(this.client)
       : checkoutSession = CheckoutSessionResource(client),
         portalSession = PortalSessionResource(client),
