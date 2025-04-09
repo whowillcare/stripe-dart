@@ -56,6 +56,7 @@ class CheckoutSession extends Message {
   final List<PaymentMethodType> paymentMethodTypes;
   final String? status;
   final String? url;
+  final Map<String, String>? metadata;
 
   CheckoutSession({
     required this.object,
@@ -66,6 +67,7 @@ class CheckoutSession extends Message {
     this.paymentIntent,
     this.status,
     this.url,
+    this.metadata,
   });
 
   factory CheckoutSession.fromJson(Map<String, dynamic> json) =>

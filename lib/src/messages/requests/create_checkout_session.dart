@@ -93,6 +93,11 @@ class CreateCheckoutSessionRequest {
   /// Sessions in subscription mode.
   final SubscriptionData? subscriptionData;
 
+  /// metadata
+  /// nullable dictionary
+  /// Set of key-value pairs that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+  final Map<String, String>? metadata;
+
   CreateCheckoutSessionRequest({
     required this.successUrl,
     required this.cancelUrl,
@@ -107,6 +112,7 @@ class CreateCheckoutSessionRequest {
     this.taxIdCollection,
     this.paymentIntentData,
     this.subscriptionData,
+    this.metadata,
   });
 
   factory CreateCheckoutSessionRequest.fromJson(Map<String, dynamic> json) =>

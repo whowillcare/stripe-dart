@@ -149,6 +149,9 @@ CheckoutSession _$CheckoutSessionFromJson(Map<String, dynamic> json) =>
       paymentIntent: json['payment_intent'] as String?,
       status: json['status'] as String?,
       url: json['url'] as String?,
+      metadata: (json['metadata'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(k, e as String),
+      ),
     );
 
 Map<String, dynamic> _$CheckoutSessionToJson(CheckoutSession instance) =>
@@ -164,6 +167,7 @@ Map<String, dynamic> _$CheckoutSessionToJson(CheckoutSession instance) =>
           .toList(),
       if (instance.status case final value?) 'status': value,
       if (instance.url case final value?) 'url': value,
+      if (instance.metadata case final value?) 'metadata': value,
     };
 
 const _$PaymentMethodTypeEnumMap = {
@@ -816,6 +820,9 @@ CreateCheckoutSessionRequest _$CreateCheckoutSessionRequestFromJson(
           ? null
           : SubscriptionData.fromJson(
               json['subscription_data'] as Map<String, dynamic>),
+      metadata: (json['metadata'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(k, e as String),
+      ),
     );
 
 Map<String, dynamic> _$CreateCheckoutSessionRequestToJson(
@@ -844,6 +851,7 @@ Map<String, dynamic> _$CreateCheckoutSessionRequestToJson(
         'payment_intent_data': value,
       if (instance.subscriptionData?.toJson() case final value?)
         'subscription_data': value,
+      if (instance.metadata case final value?) 'metadata': value,
     };
 
 const _$SessionModeEnumMap = {
