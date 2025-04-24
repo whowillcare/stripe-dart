@@ -874,6 +874,10 @@ LineItem _$LineItemFromJson(Map<String, dynamic> json) => LineItem(
       priceData: json['price_data'] == null
           ? null
           : PriceData.fromJson(json['price_data'] as Map<String, dynamic>),
+      taxRates: (json['tax_rates'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$LineItemToJson(LineItem instance) => <String, dynamic>{
@@ -882,6 +886,7 @@ Map<String, dynamic> _$LineItemToJson(LineItem instance) => <String, dynamic>{
       if (instance.description case final value?) 'description': value,
       if (instance.priceData?.toJson() case final value?) 'price_data': value,
       if (instance.price case final value?) 'price': value,
+      'tax_rates': instance.taxRates,
     };
 
 PriceData _$PriceDataFromJson(Map<String, dynamic> json) => PriceData(

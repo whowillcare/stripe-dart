@@ -138,12 +138,18 @@ class LineItem {
   /// required.
   final String? price;
 
+  /// line_items.tax_rates
+  // array of strings
+  // The tax rates which apply to this line item.
+  final List<String> taxRates;
+
   LineItem({
     this.images,
     this.quantity,
     this.description,
     this.price,
     this.priceData,
+    this.taxRates = const []
   });
 
   factory LineItem.fromJson(Map<String, dynamic> json) =>
