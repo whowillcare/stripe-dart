@@ -57,6 +57,8 @@ class CheckoutSession extends Message {
   final String? status;
   final String? url;
   final Map<String, String>? metadata;
+  /// The Epoch time in seconds at which the Checkout Session will expire. It can be anywhere from 30 minutes to 24 hours after Checkout Session creation. By default, this value is 24 hours from creation.
+  final int? expireAt;
 
   CheckoutSession({
     required this.object,
@@ -68,6 +70,7 @@ class CheckoutSession extends Message {
     this.status,
     this.url,
     this.metadata,
+    this.expireAt
   });
 
   factory CheckoutSession.fromJson(Map<String, dynamic> json) =>
