@@ -152,7 +152,7 @@ CheckoutSession _$CheckoutSessionFromJson(Map<String, dynamic> json) =>
       metadata: (json['metadata'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(k, e as String),
       ),
-      expireAt: (json['expire_at'] as num?)?.toInt(),
+      expiresAt: (json['expires_at'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$CheckoutSessionToJson(CheckoutSession instance) =>
@@ -169,7 +169,7 @@ Map<String, dynamic> _$CheckoutSessionToJson(CheckoutSession instance) =>
       if (instance.status case final value?) 'status': value,
       if (instance.url case final value?) 'url': value,
       if (instance.metadata case final value?) 'metadata': value,
-      if (instance.expireAt case final value?) 'expire_at': value,
+      if (instance.expiresAt case final value?) 'expires_at': value,
     };
 
 const _$PaymentMethodTypeEnumMap = {
@@ -825,7 +825,7 @@ CreateCheckoutSessionRequest _$CreateCheckoutSessionRequestFromJson(
       metadata: (json['metadata'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(k, e as String),
       ),
-      expireAt: (json['expire_at'] as num?)?.toInt(),
+      expiresAt: (json['expires_at'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$CreateCheckoutSessionRequestToJson(
@@ -855,7 +855,7 @@ Map<String, dynamic> _$CreateCheckoutSessionRequestToJson(
       if (instance.subscriptionData?.toJson() case final value?)
         'subscription_data': value,
       if (instance.metadata case final value?) 'metadata': value,
-      if (instance.expireAt case final value?) 'expire_at': value,
+      if (instance.expiresAt case final value?) 'expires_at': value,
     };
 
 const _$SessionModeEnumMap = {
