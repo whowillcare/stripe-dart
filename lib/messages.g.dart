@@ -825,6 +825,7 @@ CreateCheckoutSessionRequest _$CreateCheckoutSessionRequestFromJson(
       metadata: (json['metadata'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(k, e as String),
       ),
+      expireAt: (json['expire_at'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$CreateCheckoutSessionRequestToJson(
@@ -854,6 +855,7 @@ Map<String, dynamic> _$CreateCheckoutSessionRequestToJson(
       if (instance.subscriptionData?.toJson() case final value?)
         'subscription_data': value,
       if (instance.metadata case final value?) 'metadata': value,
+      if (instance.expireAt case final value?) 'expire_at': value,
     };
 
 const _$SessionModeEnumMap = {
