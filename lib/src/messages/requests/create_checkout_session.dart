@@ -98,6 +98,9 @@ class CreateCheckoutSessionRequest {
   /// Set of key-value pairs that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
   final Map<String, String>? metadata;
 
+  /// The Epoch time in seconds at which the Checkout Session will expire. It can be anywhere from 30 minutes to 24 hours after Checkout Session creation. By default, this value is 24 hours from creation.
+  final int? expireAt;
+
   CreateCheckoutSessionRequest({
     required this.successUrl,
     required this.cancelUrl,
@@ -113,6 +116,7 @@ class CreateCheckoutSessionRequest {
     this.paymentIntentData,
     this.subscriptionData,
     this.metadata,
+    this.expireAt,
   });
 
   factory CreateCheckoutSessionRequest.fromJson(Map<String, dynamic> json) =>
