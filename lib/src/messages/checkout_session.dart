@@ -17,6 +17,7 @@ enum PaymentMethodType {
   blik,
   boleto,
   card,
+  interact_present,
   // ignore: constant_identifier_names
   card_present,
   cashapp,
