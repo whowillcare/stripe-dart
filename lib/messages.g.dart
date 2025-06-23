@@ -184,7 +184,7 @@ const _$PaymentMethodTypeEnumMap = {
   PaymentMethodType.blik: 'blik',
   PaymentMethodType.boleto: 'boleto',
   PaymentMethodType.card: 'card',
-  PaymentMethodType.interact_present: 'interact_present',
+  PaymentMethodType.interac_present: 'interac_present',
   PaymentMethodType.card_present: 'card_present',
   PaymentMethodType.cashapp: 'cashapp',
   PaymentMethodType.customer_balance: 'customer_balance',
